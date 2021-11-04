@@ -43,7 +43,7 @@
         <ul class="contacts">
           <li class="site-item">
             <a class="contacts-item" href="mailto:info@devstudio.com">
-              <svg class="contacts-svg">
+              <svg class="contacts-svg" width="16" height="12">
                 <use href="./img/svg/sprite.svg#envelope"></use>
               </svg>
               info@devstudio.com
@@ -51,7 +51,7 @@
           </li>
           <li class="site-item">
             <a class="contacts-item" href="tel:+380961111111">
-              <svg class="contacts-svg">
+              <svg class="contacts-svg" width="16" height="12">
                 <use href="./img/svg/sprite.svg#vector"></use>
               </svg>
               +38 096 111 11 11
@@ -520,7 +520,7 @@
             </svg>
           </div>
           <div class="form-modal-comment" role="group">
-            <label for="comment">Комментарий</label>
+            <label class="form-modal-label" for="comment">Комментарий</label>
             <textarea
               class="comment-modal"
               name="comment"
@@ -530,9 +530,10 @@
             ></textarea>
           </div>
           <div class="form-checkbox" role="group">
-            <input class="form-checkbox-policy" type="checkbox" name="policy" id="policy" />
-            <label class="form-checkbox-text" for="policy"
-              >Соглашаюсь с рассылкой и принимаю
+            <label class="form-checkbox-label" for="policy">
+              <input class="form-checkbox-policy" type="checkbox" name="policy" id="policy" />
+              <span class="form-checkbox-icon"></span>
+              Соглашаюсь с рассылкой и принимаю
               <a class="form-checkbox-link" href="./index.html">Условия договора</a></label
             >
           </div>

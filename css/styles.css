@@ -176,21 +176,8 @@ p {
 }
 
 .contacts-svg {
-  width: 20px;
-  height: 20px;
   margin-right: 10px;
 }
-
-/*  Задаём значения перехода
-  -- Властивість--
-  transition-property: background-color, transform;
-  --Проміжок часу, протягом якого повинен відбутися перехід--
-  transition-duration: var(--t250);
-  --Швидкість переходу властивості від одного значення до іншого за час--
-  transition-timing-function: linear;
-  --Затримка, після якої почнеться анімація переходу--
-  transition-delay: 500ms;
-  */
 
 .contacts-item:hover .contacts-svg,
 .contacts-item:focus .contacts-svg {
@@ -262,6 +249,7 @@ p {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  background-color: transparent;
   transition: transform var(--t250) var(--cubic), background-color var(--t250) var(--cubic);
 }
 
@@ -294,6 +282,14 @@ p {
   margin-bottom: 10px;
 }
 
+.form-modal-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
 .form-modal-input {
   width: 448px;
   height: 40px;
@@ -320,7 +316,7 @@ p {
 .form-modal-name {
   position: absolute;
   display: inline-block;
-  top: 54%;
+  top: 50%;
   left: 2%;
   transition: fill var(--t250) var(--cubic);
 }
@@ -348,26 +344,21 @@ p {
   transition: border var(--t250) var(--cubic);
 }
 
+.comment-modal::placeholder {
+  font-size: 12px;
+  line-height: 1.61;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .comment-modal:focus {
   border: 1px solid var(--brand-color);
 }
 
 .form-checkbox {
-  display: flex;
-  align-items: center;
   margin-bottom: 30px;
-}
 
-.form-checkbox-policy {
-  display: inline-block;
-  margin-right: 7px;
-  width: 16px;
-  height: 17px;
-  border-color: var(--secondary-bg-color);
-  cursor: pointer;
-}
-
-.form-checkbox-text {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -375,7 +366,41 @@ p {
   color: var(--primary-text-color);
 }
 
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-checkbox-policy {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
+}
+
+.form-checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  cursor: pointer;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 4px;
+}
+
+.form-checkbox-policy:checked + .form-checkbox-icon {
+  border-color: transparent;
+  background-color: var(--brand-color);
+  background-image: url(../img/icon-check.svg);
+  background-size: contain;
+  background-origin: padding-box;
+}
+
 .form-checkbox-link {
+  margin-left: 3px;
   color: var(--brand-color);
   text-decoration: underline;
 }
@@ -383,6 +408,7 @@ p {
 .form-button {
   width: 200px;
   height: 50px;
+  border: transparent;
   background-color: var(--brand-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -710,7 +736,7 @@ p {
 }
 /*---Приєднуйтеся -----*/
 .right-box {
-  margin-left: 70px;
+  margin-left: 85px;
 }
 
 .join-text {
@@ -777,15 +803,15 @@ p {
 }
 
 .form-subscribe-input {
-  width: 295px;
+  width: 358px;
   height: 50px;
-  margin-right: 12px;
-
+  color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  background-color: var(--banner-color);
+  background-color: transparent;
+  outline: none;
 }
 
 .form-subscribe-label input::placeholder {
@@ -795,6 +821,10 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.form-subscribe-input:focus {
+  border: 1px solid var(--brand-color);
+}
+
 .form-subscribe-button {
   display: flex;
   align-items: center;
@@ -802,10 +832,12 @@ p {
   width: 200px;
   height: 50px;
   cursor: pointer;
+  margin-left: 12px;
 
   font-size: 16px;
   line-height: 1.87;
 
+  border: transparent;
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
